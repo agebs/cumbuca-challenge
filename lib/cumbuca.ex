@@ -7,7 +7,10 @@ defmodule Cumbuca do
   if it comes from the database, an external API or others.
   """
   alias Cumbuca.Accounts.Create
+  alias Cumbuca.Users.Login
 
   defdelegate create_account(params), to: Create, as: :call
+
+  defdelegate login(params), to: Login, as: :call
 
 end

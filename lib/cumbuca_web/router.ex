@@ -1,16 +1,27 @@
 defmodule CumbucaWeb.Router do
   use CumbucaWeb, :router
+  alias CumbucaWeb.AuthPlug
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug AuthPlug
+  end
+
   scope "/api", CumbucaWeb do
     pipe_through :api
 
+    post "/users", UsersController, :create
+    post "/login", UsersController, :login
+
+  end
+
+  scope "/api", CumbucaWeb do
+    pipe_through [:api, :auth]
+
     post "/accounts", AccountsController, :create
-
-
   end
 
   # Enables LiveDashboard only for development

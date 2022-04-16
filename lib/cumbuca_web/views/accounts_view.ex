@@ -3,7 +3,7 @@ defmodule CumbucaWeb.AccountsView do
 
   def render("create.json", %{account: account}) do
     %{
-      message: "Conta cadastrada!",
+      message: "Account created!",
       account: account
     }
   end

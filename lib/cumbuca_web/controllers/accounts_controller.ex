@@ -8,6 +8,7 @@ defmodule CumbucaWeb.AccountsController do
   action_fallback FallbackController
 
   def create(conn, params) do
+    params = Map.put(params, "user_id", conn.assigns.user_id)
     with {:ok, %Account{} = account} <- Cumbuca.create_account(params) do
       conn
       |> put_status(:created)

@@ -3,6 +3,10 @@ defmodule CumbucaWeb.FallbackController do
 
   alias CumbucaWeb.ErrorView
 
+  alias RockeliveryWeb.FallbackController
+
+  action_fallback FallbackController
+
   def call(conn, {:error, %{result: result, status: status}}) do
     conn
     |> put_status(status)
