@@ -3,6 +3,7 @@ defmodule Cumbuca.Accounts.Create do
 
   def call(params) do
     params
+    |> Map.put("balance", params["initial_balance"])
     |> Account.changeset()
     |> Repo.insert()
     |> handle_insert()

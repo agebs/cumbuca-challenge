@@ -22,6 +22,7 @@ defmodule CumbucaWeb.Router do
     pipe_through [:api, :auth]
 
     post "/accounts", AccountsController, :create
+    post "/transactions", TransactionsController, :create
   end
 
   # Enables LiveDashboard only for development
