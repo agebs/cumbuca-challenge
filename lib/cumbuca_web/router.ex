@@ -23,6 +23,7 @@ defmodule CumbucaWeb.Router do
 
     post "/accounts", AccountsController, :create
     post "/transactions", TransactionsController, :create
+    get "/transactions", TransactionQueryController, :list
   end
 
   # Enables LiveDashboard only for development
