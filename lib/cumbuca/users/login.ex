@@ -1,6 +1,5 @@
 defmodule Cumbuca.Users.Login do
-  alias Cumbuca.Repo
-  alias Cumbuca.User
+  alias Cumbuca.{Repo,User}
 
   def call(params) do
     User

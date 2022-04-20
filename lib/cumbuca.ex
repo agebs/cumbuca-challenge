@@ -12,5 +12,4 @@ defmodule Cumbuca do
   defdelegate create_account(params), to: Create, as: :call
 
   defdelegate login(params), to: Login, as: :call
-
 end
