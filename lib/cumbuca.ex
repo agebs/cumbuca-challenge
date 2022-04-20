@@ -8,8 +8,14 @@ defmodule Cumbuca do
   """
   alias Cumbuca.Accounts.Create
   alias Cumbuca.Users.Login
+  alias Cumbuca.Transactions.Query
+  alias Cumbuca.Transactions.Create, as: TransactionCreate
 
   defdelegate create_account(params), to: Create, as: :call
 
   defdelegate login(params), to: Login, as: :call
+
+  defdelegate create_transaction(paramas), to: TransactionCreate, as: :call
+
+  defdelegate list_transactions(params), to: Query, as: :call
 end
