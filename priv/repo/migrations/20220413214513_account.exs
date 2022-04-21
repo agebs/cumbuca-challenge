@@ -6,7 +6,7 @@ defmodule Cumbuca.Repo.Migrations.Account do
       add :name, :string
       add :lastname, :string
       add :cpf, :string
-      add :balance, :decimal
+      add :balance, :float
       add :initial_balance, :decimal
 
       timestamps()

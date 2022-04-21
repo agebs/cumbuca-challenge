@@ -7,11 +7,14 @@ defmodule Cumbuca do
   if it comes from the database, an external API or others.
   """
   alias Cumbuca.Accounts.Create
+  alias Cumbuca.Accounts.ViewBalance
   alias Cumbuca.Users.Login
   alias Cumbuca.Transactions.Query
   alias Cumbuca.Transactions.Create, as: TransactionCreate
 
   defdelegate create_account(params), to: Create, as: :call
+
+  defdelegate view_balance(params), to: ViewBalance, as: :call
 
   defdelegate login(params), to: Login, as: :call
 

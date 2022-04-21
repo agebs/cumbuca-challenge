@@ -15,15 +15,15 @@ defmodule CumbucaWeb.Router do
 
     post "/users", UsersController, :create
     post "/login", UsersController, :login
-
   end
 
   scope "/api", CumbucaWeb do
     pipe_through [:api, :auth]
 
     post "/accounts", AccountsController, :create
+    get "/accounts", AccountsController, :view
     post "/transactions", TransactionsController, :create
-    get "/transactions", TransactionQueryController, :list
+    get "/transactions", TransactionsController, :list
   end
 
   # Enables LiveDashboard only for development
