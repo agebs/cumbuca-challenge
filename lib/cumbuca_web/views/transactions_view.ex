@@ -7,4 +7,11 @@ defmodule CumbucaWeb.TransactionsView do
       transaction: transaction
     }
   end
+
+  def render("create.json", %{transactions: transactions}) do
+    %{
+      message: "Done!",
+      transactions: transactions
+    }
+  end
 end

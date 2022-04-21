@@ -37,5 +37,4 @@ defmodule Cumbuca.User do
   end
 
   defp put_pass_hash(changeset), do: changeset
-
 end

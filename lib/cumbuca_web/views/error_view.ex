@@ -25,11 +25,10 @@ defmodule CumbucaWeb.ErrorView do
   end
 
   defp translate_errors(changeset) do
-    Changeset.traverse_errors(changeset, fn{msg, opts} ->
+    Changeset.traverse_errors(changeset, fn {msg, opts} ->
       Enum.reduce(opts, msg, fn {key, value}, acc ->
         String.replace(acc, "%{#{key}}", to_string(value))
       end)
     end)
   end
-
 end
